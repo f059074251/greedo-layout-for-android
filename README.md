@@ -1,3 +1,4 @@
+# 效果不错就是卡得一比
 # Greedo Layout for Android
 A drop-in custom layout manager for Android RecyclerViews to layout a grid of photos while respecting their aspect ratios.
 

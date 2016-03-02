@@ -23,9 +23,12 @@ public class Constants {
             R.drawable.photo_14,
             R.drawable.photo_15,
             R.drawable.photo_16,
-            R.drawable.photo_17
+            R.drawable.photo_17,
+            R.drawable.photo_18,
+            R.drawable.photo_19,
+            R.drawable.photo_20
     };
 
     /** Number of images we will show in the sample grid */
-    public static final int IMAGE_COUNT = 100;
+    public static final int IMAGE_COUNT = 20;
 }

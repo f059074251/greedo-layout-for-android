@@ -1,7 +1,6 @@
 package com.fivehundredpx.greedo_layout_sample;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.support.annotation.DrawableRes;
 import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
@@ -14,7 +13,9 @@ import com.squareup.picasso.Picasso;
  * Created by Julian Villella on 16-02-24.
  */
 public class PhotosAdapter extends RecyclerView.Adapter<PhotosAdapter.PhotoViewHolder> implements SizeCalculatorDelegate {
-    private final @DrawableRes int[] mImageResIds = new int[Constants.IMAGE_COUNT];
+    private final
+    @DrawableRes
+    int[] mImageResIds = new int[Constants.IMAGE_COUNT];
 
     private Context mContext;
 
@@ -22,17 +23,18 @@ public class PhotosAdapter extends RecyclerView.Adapter<PhotosAdapter.PhotoViewH
     public double aspectRatioForIndex(int index) {
         // Precaution, have better handling for this in greedo-layout
         if (index >= mImageResIds.length) return 1.0;
-
-        Drawable drawable = mContext.getResources().getDrawable(mImageResIds[index]);
+        /*Drawable drawable = mContext.getResources().getDrawable(mImageResIds[index]);
         if (drawable != null) {
             return drawable.getIntrinsicWidth() / (double) drawable.getIntrinsicHeight();
         } else {
             return 1.0;
-        }
+        }*/
+        return MeasUtils.getRatio(mContext.getResources(), mImageResIds[index]);
     }
 
     public class PhotoViewHolder extends RecyclerView.ViewHolder {
         private ImageView mImageView;
+
         public PhotoViewHolder(ImageView imageView) {
             super(imageView);
             mImageView = imageView;
